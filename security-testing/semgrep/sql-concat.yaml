@@ -1,0 +1,8 @@
+rules:
+  - id: lab-python-sql-concatenation
+    languages: [python]
+    severity: ERROR
+    message: Build SQL with bound parameters, not f-strings.
+    pattern-either:
+      - pattern: execute(f"...{...}...")
+      - pattern: execute("..." % ...)
